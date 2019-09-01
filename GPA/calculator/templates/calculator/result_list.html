@@ -1,0 +1,216 @@
+{% extends 'calculator/base.html' %}
+{% block content %}
+    <!-- 100 hundred level -->
+     <!--For First Semester Result--->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              {% if error_message %}
+                <div class="card bg-secondary mb-2">
+                    <p class="text-white" style="font-family: cursive"><i>{{ error_message }}</i></p>
+                </div>
+              {% endif %}
+{#              {% if result_list %}#}
+{#                  {% for result in result_list %}#}
+{#                      {% if result.semester == '1st Semester' %}#}
+{#                          #}
+{#                      {% endif %}#}
+{#                  {% endfor %}#}
+{#              {% endif %}#}
+                <div class="card">
+                   <div class="card-header">
+                       <p class="mb-0"><strong>COMPUTED RESULT</strong></p>
+                       <p class="text-uppercase"><strong>100 level</strong></p>
+                       <p class="text-uppercase"><strong>1st Semester</strong></p>
+                   </div>
+
+                       <div class="table-responsive-sm">
+                          <table class="table table-striped">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th>CODE</th>
+                                <th>TITLE</th>
+                                <th>UNIT</th>
+                                <th>TYPE</th>
+                                <th>TOTAL SCORE</th>
+                                <th>GRADE</th>
+                                <th>PT</th>
+                                <th>SEMESTER</th>
+                                <th>SESSION</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for result in result_list %}
+                                {% if result.semester == '1st Semester' %}
+                                  <tr class="table-dark text-dark">
+                                    <td>{{ result.course_code }}</td>
+                                    <td>{{ result.course_title }}</td>
+                                    <td>{{ result.course_unit }}</td>
+                                    <td>{{ result.course_type }}</td>
+                                    <td>{{ result.total_score}}</td>
+                                    {% if result.total_score >= 70 and result.total_score <= 100 %}
+                                      <td>A</td>
+                                    {% elif result.total_score >= 60 and result.total_score <= 69 %}
+                                      <td>B</td>
+                                    {% elif result.total_score >= 50 and result.total_score <= 59 %}
+                                      <td>C</td>
+                                    {% elif result.total_score >= 45 and result.total_score <= 49 %}
+                                      <td>D</td>
+                                    {% elif result.total_score >= 0 and result.total_score <= 44 %}
+                                      <td>F</td>
+                                    {% endif %}
+                                    <!----project file upload location was here -->
+                                   <td>{{ result.grade_pt }}</td>
+                                   <td>{{ result.semester }}</td>
+                                   <td>{{ result.session }}</td>
+                                  </tr>
+                                {% endif %}
+                             {% endfor %}
+                            </tbody>
+                          </table>
+                           <h3 class="text-dark"><strong>Current Gpa is:</strong> {{ Current_Gpa }} </h3>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- 100 hundred level -->
+     <!--For Second Semester Result--->
+     <div class="mt-5 container">
+        <div class="row">
+            <div class="col-md-12">
+              {% if error_message %}
+                <div class="card bg-secondary mb-2">
+                    <p class="text-white" style="font-family: cursive"><i>{{ error_message }}</i></p>
+                </div>
+              {% endif %}
+
+                <div class="card mb-5">
+                   <div class="card-header">
+                       <p class="mb-0"><strong>COMPUTED RESULT</strong></p>
+                       <p class="text-uppercase"><strong>100 level</strong></p>
+                       <p class="text-uppercase"><strong>2nd Semester</strong></p>
+                   </div>
+
+                       <div class="table-responsive-sm">
+                          <table class="table table-striped">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th>CODE</th>
+                                <th>TITLE</th>
+                                <th>UNIT</th>
+                                <th>TYPE</th>
+                                <th>TOTAL SCORE</th>
+                                <th>GRADE</th>
+                                <th>PT</th>
+                                <th>SEMESTER</th>
+                                <th>SESSION</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for result in result_list %}
+                                {% if result.semester == '2nd Semester' %}
+                                  <tr class="table-dark text-dark">
+                                    <td>{{ result.course_code }}</td>
+                                    <td>{{ result.course_title }}</td>
+                                    <td>{{ result.course_unit }}</td>
+                                    <td>{{ result.course_type }}</td>
+                                    <td>{{ result.total_score}}</td>
+                                    {% if result.total_score >= 70 and result.total_score <= 100 %}
+                                      <td>A</td>
+                                    {% elif result.total_score >= 60 and result.total_score <= 69 %}
+                                      <td>B</td>
+                                    {% elif result.total_score >= 50 and result.total_score <= 59 %}
+                                      <td>C</td>
+                                    {% elif result.total_score >= 45 and result.total_score <= 49 %}
+                                      <td>D</td>
+                                    {% elif result.total_score >= 0 and result.total_score <= 44 %}
+                                      <td>F</td>
+                                    {% endif %}
+                                    <!----project file upload location was here -->
+                                   <td>{{ result.grade_pt }}</td>
+                                   <td>{{ result.semester }}</td>
+                                   <td>{{ result.session }}</td>
+                                  </tr>
+                                {% endif %}
+                             {% endfor %}
+                            </tbody>
+                          </table>
+                           <h3 class="text-dark"><strong>Current Cgpa is:</strong> {{ Current_Cgpa }} </h3>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--200 level --->
+    <!--200 level First Semester -->
+{#    <div class="mt-5 container">#}
+{#        <div class="row">#}
+{#            <div class="col-md-12">#}
+{#              {% if error_message %}#}
+{#                <div class="card bg-secondary mb-2">#}
+{#                    <p class="text-white" style="font-family: cursive"><i>{{ error_message }}</i></p>#}
+{#                </div>#}
+{#              {% endif %}#}
+{##}
+{#                <div class="card mb-5">#}
+{#                   <div class="card-header">#}
+{#                       <p class="mb-0"><strong>COMPUTED RESULT</strong></p>#}
+{#                       <p class="text-uppercase"><strong>200 level</strong></p>#}
+{#                       <p class="text-uppercase"><strong>2nd Semester</strong></p>#}
+{#                   </div>#}
+{##}
+{#                       <div class="table-responsive-sm">#}
+{#                          <table class="table table-striped">#}
+{#                            <thead class="thead-dark">#}
+{#                              <tr>#}
+{#                                <th>CODE</th>#}
+{#                                <th>TITLE</th>#}
+{#                                <th>UNIT</th>#}
+{#                                <th>TYPE</th>#}
+{#                                <th>TOTAL SCORE</th>#}
+{#                                <th>GRADE</th>#}
+{#                                <th>PT</th>#}
+{#                                <th>SEMESTER</th>#}
+{#                                <th>SESSION</th>#}
+{#                              </tr>#}
+{#                            </thead>#}
+{#                            <tbody>#}
+{#                            {% for result in result_list %}#}
+{#                                {% if result.semester == '1st Semester' %}#}
+{#                                  <tr class="table-dark text-dark">#}
+{#                                    <td>{{ result.course_code }}</td>#}
+{#                                    <td>{{ result.course_title }}</td>#}
+{#                                    <td>{{ result.course_unit }}</td>#}
+{#                                    <td>{{ result.course_type }}</td>#}
+{#                                    <td>{{ result.total_score}}</td>#}
+{#                                    {% if result.total_score >= 70 and result.total_score <= 100 %}#}
+{#                                      <td>A</td>#}
+{#                                    {% elif result.total_score >= 60 and result.total_score <= 69 %}#}
+{#                                      <td>B</td>#}
+{#                                    {% elif result.total_score >= 50 and result.total_score <= 59 %}#}
+{#                                      <td>C</td>#}
+{#                                    {% elif result.total_score >= 45 and result.total_score <= 49 %}#}
+{#                                      <td>D</td>#}
+{#                                    {% elif result.total_score >= 0 and result.total_score <= 44 %}#}
+{#                                      <td>F</td>#}
+{#                                    {% endif %}#}
+{#                                    <!----project file upload location was here -->#}
+{#                                   <td>{{ result.grade_pt }}</td>#}
+{#                                   <td>{{ result.semester }}</td>#}
+{#                                   <td>{{ result.session }}</td>#}
+{#                                  </tr>#}
+{#                                {% endif %}#}
+{#                             {% endfor %}#}
+{#                            </tbody>#}
+{#                          </table>#}
+{#                           <h3 class="text-dark"><strong>Current Cgpa is:</strong> {{ Current_Cgpa }} </h3>#}
+{#                       </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'calculator/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mb-3">
+                <div class="card">
+                    <div class="card-header">BIO DATA</div>
+                    <div class="card-body">
+                        <p><strong>FIRST NAME: </strong>{{ user.first_name }}</p><br>
+                        <p><strong>LAST NAME: </strong>{{ user.last_name }}</p><br>
+                        <p><strong>EMAIL ADDRESS: </strong>{{ user.email }}</p><br>
+                        <p><strong>MATRIC NO: </strong>{{ user.studentprofile.matric_no }}</p><br>
+                        <p><strong>FACULTY: </strong>{{ user.studentprofile.faculty }}</p><br>
+                        <p><strong>DEPARTMENT: </strong>{{ user.studentprofile.department }}</p><br>
+                        <p><strong>SEX: </strong>{{ user.studentprofile.sex }}</p><br>
+                        <p><strong>LEVEL: </strong>{{ user.studentprofile.level }}</p>
+                         <div class="button-content" style="float: right ;">
+                             <a href="#" class="btn btn-primary">Update</a>
+                             <a href="#" class="btn btn-danger">ModalView</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+{% endblock %}

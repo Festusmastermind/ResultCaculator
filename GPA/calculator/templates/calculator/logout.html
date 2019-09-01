@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=0">
+	<link rel="stylesheet"  type="text/css" href="{% static 'calculator/css/bootstrap.min.css' %}">
+
+    <title>Logged Out</title>
+</head>
+   <body>
+      <div class="jumbotron jumbotron-fluid">
+         <div class="container text-center">
+             <h1 class="text-center text-danger">OOPS!! You have Logged Out!!</h1>
+             <a href="{% url 'login' %}" class="btn btn-primary">login Now</a>
+         </div>
+      </div>
+
+    <script src="{% static 'calculator/js/jquery.min.js' %}"></script>
+	<script src="{% static 'calculator/js/bootstrap.bundle.js' %}"></script>
+	<script src="{% static 'calculator/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'calculator/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

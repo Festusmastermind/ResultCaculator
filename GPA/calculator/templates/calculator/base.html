@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=0">
+	<link rel="stylesheet"  type="text/css" href="{% static 'calculator/css/bootstrap.min.css' %}">
+
+    <title>{% block title %}Result Portal{% endblock %}</title>
+</head>
+   <body>
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container text-center">
+              <h1 class="mt-2 text-uppercase text-danger" style="font-family: 'Trebuchet MS'">Welcome {{ user.first_name }}</h1>
+              <h3>Welcome to CGPA & GPA Result Calculator Master...<i>Enjoy!!</i></h3>
+              <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <!-- Brand -->
+                  <a class="navbar-brand" href="#">ResultPORTAL<i>System</i></a>
+                  <!-- Toggler/collapsibe Button -->
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <!-- Navbar links -->
+                  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item"><a class="nav-link active" href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li><a class="nav-link" href="{% url 'myprofile' %}">My Profile</a></li>
+                        <li><a class="nav-link" href="{% url 'add_result' %}">Add Result</a></li>
+                        <li><a class="nav-link" href="{% url 'load_result' %}">Load Result</a></li>
+                        <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                  </div>
+              </nav><!--The end of the navbar-->
+          </div>
+      </div>
+            {% block content %}
+
+            {% endblock %}
+
+
+    <script src="{% static 'calculator/js/jquery.min.js' %}"></script>
+	<script src="{% static 'calculator/js/bootstrap.bundle.js' %}"></script>
+	<script src="{% static 'calculator/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'calculator/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

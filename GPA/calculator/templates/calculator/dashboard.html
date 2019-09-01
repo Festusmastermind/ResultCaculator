@@ -1,0 +1,36 @@
+{% extends 'calculator/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header text-uppercase" style="font-family: Gabriola; font-size: 30px">
+                        Portal Guide</div>
+                    <div class="card body">
+                        <h2 class="card-title">Step 1</h2>
+                        <p class="card-text">Click on Add Result to add your result respectively</p>
+                        <h2 class="card-title">Step 2</h2>
+                        <p class="card-text">Click on Load Result to View your computed Result</p>
+                        <h2 class="card-title">Step 3</h2>
+                        <p class="card-text">Repeat step 1 and 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="mb-1 alert alert-{{ message.tags }}">
+                           {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div class="card bg-light rounded">
+                    <div class="card-body">
+                        <p class="card-text">Your current CGPA is: <i>{{ Current_Gpa }} </i> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
